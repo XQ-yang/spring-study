@@ -4,9 +4,32 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="user" class="com.spring.pojo.User">
-        <constructor-arg type="java.lang.String" value="yangxiaoqiang"/>
-        <constructor-arg type="int" value="20"/>
+    <!--通过无参构造创建，默认的方式-->
+
+
+    <!--通过有参构造创建，有三种-->
+    <!--通过属性下标创建-->
+    <bean id="user" class="com.spring.pojo.User" name="user04,user08">
+        <constructor-arg index="0" value="yangxiaoqiang"/>
+        <constructor-arg index="1" value="20"/>
     </bean>
+
+    <!--通过属性名称创建-->
+<!--    <bean id="user" class="com.spring.pojo.User">-->
+<!--        <constructor-arg name="name" value="yangxiaoqiang"/>-->
+<!--        <constructor-arg name="age" value="20"/>-->
+<!--    </bean>-->
+
+    <!--通过属性类型创建对象-->
+<!--    <bean id="user" class="com.spring.pojo.User">-->
+<!--        <constructor-arg type="java.lang.String" value="yangxiaoqiang"/>-->
+<!--        <constructor-arg type="int" value="20"/>-->
+<!--    </bean>-->
+
+
+    <bean id="user02" class="com.spring.pojo.User02"></bean>
+
+    <!--别名，一般不用，可以直接在bean标签中起别名-->
+    <alias name="user" alias="user01"/>
 
 </beans>

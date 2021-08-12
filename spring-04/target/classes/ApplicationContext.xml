@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="address" class="com.spring.pojo.Address">
+        <property name="address" value="贵州安顺"/>
+    </bean>
+
+    <bean id="student" class="com.spring.pojo.Student">
+        <property name="name" value="yangxiaoqiang"/>
+        <property name="address" ref="address"/>
+
+        <!--数组注入-->
+        <property name="books">
+            <array>
+                <value>java基础</value>
+                <value>高等数学</value>
+                <value>数据结构和算法</value>
+                <value>ssm整合</value>
+            </array>
+        </property>
+
+        <!--List注入-->
+        <property name="hobbys">
+            <list>
+                <value>学习</value>
+                <value>看电影</value>
+                <value>听歌</value>
+                <value>撸代码</value>
+            </list>
+        </property>
+
+
+        <!--Map注入-->
+        <property name="card">
+            <map>
+                <entry key="身份证" value="34973874326587623487"/>
+                <entry key="学生证" value="34973874326587623487"/>
+                <entry key="银行卡" value="34973874326587623487"/>
+            </map>
+        </property>
+
+        <!--Set注入-->
+        <property name="games">
+            <set>
+                <value>LOL</value>
+                <value>csgo</value>
+                <value>绝地求生</value>
+                <value>王者荣耀</value>
+            </set>
+        </property>
+
+
+        <!--空值注入-->
+        <property name="wife">
+            <null/>
+        </property>
+
+        <!--Properties注入-->
+        <property name="info">
+            <props>
+                <prop key="学号">2386487231642</prop>
+                <prop key="性别">男</prop>
+                <prop key="年龄">23</prop>
+                <prop key="院系">计算机学院</prop>
+                <prop key="专业">软件工程</prop>
+            </props>
+        </property>
+
+    </bean>
+
+
+
+
+
+</beans>
